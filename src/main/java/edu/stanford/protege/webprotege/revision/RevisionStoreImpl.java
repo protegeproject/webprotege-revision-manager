@@ -225,13 +225,12 @@ public class RevisionStoreImpl implements RevisionStore {
                 }, SkipSetting.SKIP_NONE);
                 inputStream.close();
                 stopwatch.stop();
-                revisions = revisionsBuilder.build();
                 logger.info("{} Change history loading complete.  Loaded {} revisions in {} ms.", projectId, revisions.size(), stopwatch
                         .elapsed(TimeUnit.MILLISECONDS));
-
             } catch(Exception e) {
                 logger.error("{} Failed to load change history for project.  Cause: {}", projectId, e.getMessage(), e);
             }
+            revisions = revisionsBuilder.build();
         } finally {
             writeLock.unlock();
         }
