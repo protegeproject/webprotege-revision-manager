@@ -33,6 +33,11 @@ public class RevisionStoreFactory {
         this.changeRecordTranslator = checkNotNull(changeRecordTranslator);
     }
 
+    /**
+     * Create and load a revision store for the specified project
+     * @param projectId The project
+     * @return The loaded revision store for the project
+     */
     @Nonnull
     public RevisionStore createRevisionStore(@Nonnull ProjectId projectId) {
         checkNotNull(projectId);

@@ -61,6 +61,8 @@ public class RevisionStoreImpl implements RevisionStore {
 
     private Runnable savedHook = () -> {};
 
+    private boolean loaded = false;
+
     @Inject
     public RevisionStoreImpl(@Nonnull ProjectId projectId,
                              @Nonnull ChangeHistoryFileFactory changeHistoryFileFactory,
@@ -191,9 +193,16 @@ public class RevisionStoreImpl implements RevisionStore {
         }
     }
 
+
+    /**
+     * Load this revision store.  This method is safe in that it can be called multiple times by different threads.
+     */
     public void load() {
         try {
             writeLock.lock();
+            if(loaded) {
+                return;
+            }
             var changeHistoryFile = changeHistoryFileFactory.getChangeHistoryFile(projectId);
             if(!changeHistoryFile.exists()) {
                 changeHistoryFile.getParentFile().mkdirs();
@@ -231,6 +240,7 @@ public class RevisionStoreImpl implements RevisionStore {
                 logger.error("{} Failed to load change history for project.  Cause: {}", projectId, e.getMessage(), e);
             }
             revisions = revisionsBuilder.build();
+            loaded = true;
         } finally {
             writeLock.unlock();
         }
