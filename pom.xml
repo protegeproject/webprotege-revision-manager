@@ -23,7 +23,7 @@
 		</dependency>
 		<dependency>
 			<groupId>edu.stanford.protege</groupId>
-			<artifactId>webprotege-change-api</artifactId>
+			<artifactId>webprotege-change</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
