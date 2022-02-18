@@ -31,8 +31,8 @@
 		</dependency>
 		<dependency>
 			<groupId>edu.stanford.protege</groupId>
-			<artifactId>webprotege-change</artifactId>
-			<version>0.9.0</version>
+			<artifactId>webprotege-ontology-change</artifactId>
+			<version>0.9.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.stanford.protege</groupId>
