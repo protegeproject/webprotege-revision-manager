@@ -35,11 +35,6 @@
 			<version>0.9.1</version>
 		</dependency>
 		<dependency>
-			<groupId>edu.stanford.protege</groupId>
-			<artifactId>webprotege-backend-api</artifactId>
-			<version>0.9.1</version>
-		</dependency>
-		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>30.1.1-jre</version>
