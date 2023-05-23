@@ -42,7 +42,12 @@
 		<dependency>
 			<groupId>net.sourceforge.owlapi</groupId>
 			<artifactId>owlapi-api</artifactId>
-			<version>4.5.13</version>
+			<version>4.5.18</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.owlapi</groupId>
+			<artifactId>owlapi-apibinding</artifactId>
+			<version>4.5.18</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.stanford.protege</groupId>
