@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>edu.stanford.protege</groupId>
 	<artifactId>webprotege-revision-manager</artifactId>
-	<version>0.9.3-SNAPSHOT</version>
+	<version>0.10.0-SNAPSHOT</version>
 	<name>webprotege-revision-manager</name>
 	<description>A library for managing revisions in a WebProtégé project</description>
 	<properties>
@@ -58,7 +58,7 @@
 		<dependency>
 			<groupId>net.sourceforge.owlapi</groupId>
 			<artifactId>binaryowl</artifactId>
-			<version>2.0.1</version>
+			<version>2.1.0</version>
 			<exclusions>
 				<exclusion>
 					<groupId>net.sourceforge.owlapi</groupId>
@@ -133,27 +133,14 @@
 					</plugin>
 
 					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>1.6.7</version>
+						<groupId>org.sonatype.central</groupId>
+						<artifactId>central-publishing-maven-plugin</artifactId>
+						<version>0.8.0</version>
 						<extensions>true</extensions>
 						<configuration>
-							<serverId>ossrh</serverId>
-							<nexusUrl>https://oss.sonatype.org</nexusUrl>
-							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+							<publishingServerId>central</publishingServerId>
+							<autoPublish>true</autoPublish>
 						</configuration>
-						<dependencies>
-							<!--
-                              TODO:
-                                Remove after OSSRH-66257, NEXUS-26993 are fixed,
-                                possibly via https://github.com/sonatype/nexus-maven-plugins/pull/91
-                            -->
-							<dependency>
-								<groupId>com.thoughtworks.xstream</groupId>
-								<artifactId>xstream</artifactId>
-								<version>1.4.15</version>
-							</dependency>
-						</dependencies>
 					</plugin>
 
 				</plugins>
